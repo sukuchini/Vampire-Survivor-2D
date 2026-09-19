@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://c1sx7bic4uhdj"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/happy_boo/happy_boo.tscn" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://yh2ao5or56lq" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://du5i8r7jdycua" path="res://gun.tscn" id="3_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxpcc"]
+radius = 29.017237
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xqe8j"]
+radius = 38.013157
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehwb3"]
+bg_color = Color(0.9882353, 0.27058825, 0.2901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxpcc"]
+bg_color = Color(0.2656898, 0.94884485, 0.5999741, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D" unique_id=1590897739]
+motion_mode = 1
+script = ExtResource("1_onrkg")
+
+[node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_4flbx")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2094245391]
+shape = SubResource("CircleShape2D_xxpcc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=387668783]
+
+[node name="Gun" parent="." unique_id=1854508319 instance=ExtResource("3_i3pqv")]
+position = Vector2(2, -46)
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=921791606]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=418219914]
+shape = SubResource("CircleShape2D_xqe8j")
+debug_color = Color(0.8812946, 0.2702612, 0.52185065, 0.41960785)
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1907903855]
+unique_name_in_owner = true
+offset_left = -124.0
+offset_top = -148.67337
+offset_right = 125.0
+offset_bottom = -119.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ehwb3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xxpcc")
+value = 100.0
+show_percentage = false
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=937242742]
+current = true

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://swcb8q32cvqi"]
+
+[ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://player.tscn" id="1_3cish"]
+[ext_resource type="Script" uid="uid://c1bfau31nfqio" path="res://survivors_game.gd" id="1_l26od"]
+[ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://pine_tree.tscn" id="2_y3pti"]
+
+[sub_resource type="Curve2D" id="Curve2D_qqaft"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -187, -308, 0, 0, 0, 0, 2173, -309, 0, 0, 0, 0, 2172, 1333, 0, 0, 0, 0, -184, 1325, 0, 0, 0, 0, -189, -309, 0, 0, 0, 0, -176, -305)
+}
+point_count = 6
+
+[node name="Game" type="Node2D" unique_id=1620709604]
+y_sort_enabled = true
+script = ExtResource("1_l26od")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2081939840]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1422985025]
+offset_right = 1960.0
+offset_bottom = 1153.0
+
+[node name="Player" parent="." unique_id=1590897739 instance=ExtResource("1_3cish")]
+position = Vector2(892, 515)
+
+[node name="StaticBody2D" parent="." unique_id=1792052463 instance=ExtResource("2_y3pti")]
+position = Vector2(542, 289)
+
+[node name="StaticBody2D2" parent="." unique_id=1963151881 instance=ExtResource("2_y3pti")]
+position = Vector2(353, 400)
+
+[node name="StaticBody2D3" parent="." unique_id=613647483 instance=ExtResource("2_y3pti")]
+position = Vector2(263, 495)
+
+[node name="StaticBody2D4" parent="." unique_id=1089845718 instance=ExtResource("2_y3pti")]
+position = Vector2(1359, 601)
+
+[node name="StaticBody2D5" parent="." unique_id=2085309895 instance=ExtResource("2_y3pti")]
+position = Vector2(1465, 208)
+
+[node name="StaticBody2D6" parent="." unique_id=368502710 instance=ExtResource("2_y3pti")]
+position = Vector2(1540, 254)
+
+[node name="StaticBody2D7" parent="." unique_id=1178530365 instance=ExtResource("2_y3pti")]
+position = Vector2(843, 760)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1747777441]
+curve = SubResource("Curve2D_qqaft")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=274866496]
+unique_name_in_owner = true
+position = Vector2(-187, -308)
+rotation = -0.0004237288
