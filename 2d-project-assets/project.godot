@@ -75,7 +75,7 @@ Settings/Show_Tooltips=true
 [application]
 
 config/name="Vampire Survivor 2D"
-run/main_scene="uid://swcb8q32cvqi"
+run/main_scene="uid://cadwlg4hppyry"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.png"
 

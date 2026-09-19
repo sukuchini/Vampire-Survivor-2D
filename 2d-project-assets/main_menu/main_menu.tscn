@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://cadwlg4hppyry"]
+
+[ext_resource type="Script" uid="uid://bon16olch8j1n" path="res://main_menu/main_menu.gd" id="1_oa53l"]
+
+[sub_resource type="SystemFont" id="SystemFont_xxpcc"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_ehwb3"]
+font_names = PackedStringArray("Impact")
+
+[node name="Main_Menu" type="Control" unique_id=884601407]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oa53l")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=179305086]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2093812947]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101498984, 0.5948204, 0.4652784, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=416238986]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=801830679]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=95462400]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1176620569]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0.22183844, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0.22352941, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_xxpcc")
+theme_override_font_sizes/font_size = 124
+text = "GAME TITLE
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1493873766]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=700409059]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1714143526]
+layout_mode = 2
+
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=571192982]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=731738495]
+custom_minimum_size = Vector2(300, 84)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ehwb3")
+theme_override_font_sizes/font_size = 48
+text = "START GAME"
+
+[node name="Settings_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1690416922]
+custom_minimum_size = Vector2(300, 84)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ehwb3")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1286167729]
+custom_minimum_size = Vector2(300, 84)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_ehwb3")
+theme_override_font_sizes/font_size = 48
+text = "EXIT"
