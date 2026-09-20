@@ -23,6 +23,7 @@ func play_shot() -> void:
 
 func play_enemy_death(pos: Vector2) -> void:
 	if not mute:
+		print("SONIDO DE MUERTE EN: ", pos)
 		$EnemyDeath.global_position = pos
 		$EnemyDeath.play()
 			

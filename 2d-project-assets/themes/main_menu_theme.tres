@@ -1,0 +1,22 @@
+[gd_resource type="Theme" format=3 uid="uid://bbi51hlqj3ycq"]
+
+[sub_resource type="SystemFont" id="SystemFont_nccvq"]
+font_names = PackedStringArray("Sans-Serif")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45xvp"]
+bg_color = Color(0.12156863, 0.23529412, 0.15686275, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nccvq"]
+bg_color = Color(0.26331866, 0.45993942, 0.32375297, 1)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 48
+Button/fonts/font = SubResource("SystemFont_nccvq")
+Button/styles/disabled = SubResource("StyleBoxFlat_45xvp")
+Button/styles/hover = SubResource("StyleBoxFlat_nccvq")

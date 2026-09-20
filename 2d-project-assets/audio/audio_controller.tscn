@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://coiwgjxwad181" path="res://audio/audio_controller.gd" id="1_blxgy"]
 [ext_resource type="AudioStream" uid="uid://cca4s0bt631fu" path="res://music/mixkit-game-whip-shot-1512.wav" id="2_blxgy"]
 [ext_resource type="AudioStream" uid="uid://jbxnp2mca3hb" path="res://music/mixkit-player-losing-or-failing-2042.wav" id="3_xujww"]
+[ext_resource type="AudioStream" uid="uid://usndixfi8qte" path="res://music/mixkit-creature-cry-of-hurt-2208.wav" id="4_xujww"]
 [ext_resource type="AudioStream" uid="uid://bdsm2if4eqgsq" path="res://music/the_mountain-retro-game-593063.mp3" id="5_blxgy"]
 
 [node name="AudioController" type="Node2D" unique_id=1573015542]
@@ -11,15 +12,20 @@ script = ExtResource("1_blxgy")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1571086904]
 stream = ExtResource("1_aufy8")
+bus = &"Music"
 
 [node name="Shot" type="AudioStreamPlayer" parent="." unique_id=1539185983]
 stream = ExtResource("2_blxgy")
+bus = &"SFX"
 
 [node name="EnemyDeath" type="AudioStreamPlayer2D" parent="." unique_id=593823521]
-stream = ExtResource("2_blxgy")
+stream = ExtResource("4_xujww")
+bus = &"SFX"
 
 [node name="Main_Menu_Music" type="AudioStreamPlayer" parent="." unique_id=857741345]
 stream = ExtResource("5_blxgy")
+bus = &"Music"
 
 [node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=1140486823]
 stream = ExtResource("3_xujww")
+bus = &"Music"
