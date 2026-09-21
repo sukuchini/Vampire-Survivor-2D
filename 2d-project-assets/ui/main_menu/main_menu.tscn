@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cadwlg4hppyry"]
 
 [ext_resource type="Theme" uid="uid://bbi51hlqj3ycq" path="res://themes/main_menu_theme.tres" id="1_3shxk"]
-[ext_resource type="Script" uid="uid://bon16olch8j1n" path="res://main_menu/main_menu.gd" id="1_oa53l"]
-[ext_resource type="Script" uid="uid://d2lhqy7fuks48" path="res://main_menu/audio_settings.gd" id="2_d3a7t"]
-[ext_resource type="Script" uid="uid://cwovuia511ku1" path="res://main_menu/fullscreen_control.gd" id="4_bws42"]
+[ext_resource type="Script" uid="uid://bon16olch8j1n" path="res://ui/main_menu/main_menu.gd" id="1_oa53l"]
+[ext_resource type="Script" uid="uid://d2lhqy7fuks48" path="res://ui/main_menu/audio_settings.gd" id="2_d3a7t"]
+[ext_resource type="Script" uid="uid://cwovuia511ku1" path="res://ui/main_menu/fullscreen_control.gd" id="4_bws42"]
 
 [sub_resource type="SystemFont" id="SystemFont_xxpcc"]
 font_names = PackedStringArray("Impact")

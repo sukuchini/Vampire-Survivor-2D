@@ -8,7 +8,7 @@ extends Control
 @onready var back_button: Button = $Settings/Back_Button
 
 
-@onready var start_level = preload("res://survivors_game.tscn") as PackedScene
+@onready var start_level = preload("res://scenes/survivors_game.tscn") as PackedScene
 
 func _ready():
 	start_button.button_down.connect(on_start_pressed)

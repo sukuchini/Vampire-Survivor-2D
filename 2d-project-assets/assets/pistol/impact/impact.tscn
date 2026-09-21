@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://kcl4efkvrany"]
 
-[ext_resource type="Script" uid="uid://de6y8t2sf6ynh" path="res://pistol/impact/impact.gd" id="1_4vum2"]
-[ext_resource type="Texture2D" uid="uid://ca0823iqg8dep" path="res://pistol/impact/circle.png" id="2_wp1di"]
+[ext_resource type="Script" uid="uid://de6y8t2sf6ynh" path="res://assets/pistol/impact/impact.gd" id="1_4vum2"]
+[ext_resource type="Texture2D" uid="uid://ca0823iqg8dep" path="res://assets/pistol/impact/circle.png" id="2_wp1di"]
+
 
 [node name="Impact" type="Node2D" unique_id=1086043160]
 top_level = true

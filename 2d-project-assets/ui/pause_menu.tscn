@@ -59,9 +59,11 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
 text = "Start Game"
 
-[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1131988449]
+[node name="Resume" type="Button" parent="Panel/VBoxContainer/Restart" unique_id=1131988449]
 custom_minimum_size = Vector2(350, 120)
-layout_mode = 2
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 120.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)

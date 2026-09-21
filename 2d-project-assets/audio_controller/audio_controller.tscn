@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://c5r3gpb45nyrd"]
 
 [ext_resource type="AudioStream" uid="uid://52biero2kjr2" path="res://music/hitslab-retro-arcade-game-music-396890.mp3" id="1_aufy8"]
-[ext_resource type="Script" uid="uid://coiwgjxwad181" path="res://audio/audio_controller.gd" id="1_blxgy"]
+[ext_resource type="Script" uid="uid://coiwgjxwad181" path="res://audio_controller/audio_controller.gd" id="1_blxgy"]
 [ext_resource type="AudioStream" uid="uid://cca4s0bt631fu" path="res://music/mixkit-game-whip-shot-1512.wav" id="2_blxgy"]
 [ext_resource type="AudioStream" uid="uid://jbxnp2mca3hb" path="res://music/mixkit-player-losing-or-failing-2042.wav" id="3_xujww"]
 [ext_resource type="AudioStream" uid="uid://usndixfi8qte" path="res://music/mixkit-creature-cry-of-hurt-2208.wav" id="4_xujww"]
 [ext_resource type="AudioStream" uid="uid://bdsm2if4eqgsq" path="res://music/the_mountain-retro-game-593063.mp3" id="5_blxgy"]
+
 
 [node name="AudioController" type="Node2D" unique_id=1573015542]
 script = ExtResource("1_blxgy")
