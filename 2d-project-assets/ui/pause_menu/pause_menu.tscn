@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://b2oy7eeihb4gm"]
 
+[ext_resource type="Shader" uid="uid://b3w1n5jtq01tx" path="res://ui/pause_menu/pause_menu.gdshader" id="1_mnjdh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_50142"]
+shader = ExtResource("1_mnjdh")
+shader_parameter/lod = 0.0
+
 [sub_resource type="SystemFont" id="SystemFont_euhrg"]
 font_names = PackedStringArray("", "Sans-Serif")
 
@@ -10,7 +16,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="Animation" id="Animation_mnjdh"]
+resource_name = "blur"
+length = 0.3
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jbgdu"]
+_data = {
+&"blur": SubResource("Animation_mnjdh")
+}
+
 [node name="PauseMenu" type="Control" unique_id=1502801388]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,10 +34,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=376395966]
+material = SubResource("ShaderMaterial_50142")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="Panel" type="Panel" parent="." unique_id=1950275088]
-layout_mode = 0
-offset_right = 917.0
-offset_bottom = 742.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.75
+offset_top = -371.0
+offset_right = 332.75
+offset_bottom = 371.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=583429457]
 layout_mode = 1
@@ -36,8 +70,9 @@ offset_right = 175.0
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 50
 
-[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=181568680]
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer" unique_id=181568680]
 custom_minimum_size = Vector2(350, 120)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -46,9 +81,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_euhrg")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
-text = "Start Game"
+text = "Resume"
 
-[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=807294878]
+[node name="RestartButton" type="Button" parent="Panel/VBoxContainer" unique_id=807294878]
 custom_minimum_size = Vector2(350, 120)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -57,17 +92,18 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_euhrg")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
-text = "Start Game"
+text = "Restart"
 
-[node name="Resume" type="Button" parent="Panel/VBoxContainer/Restart" unique_id=1131988449]
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=1131988449]
 custom_minimum_size = Vector2(350, 120)
-layout_mode = 0
-offset_right = 350.0
-offset_bottom = 120.0
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("SystemFont_euhrg")
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
-text = "Start Game"
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1123951212]
+libraries/ = SubResource("AnimationLibrary_jbgdu")
