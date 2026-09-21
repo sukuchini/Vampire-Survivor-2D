@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://b2oy7eeihb4gm"]
+
+[sub_resource type="SystemFont" id="SystemFont_euhrg"]
+font_names = PackedStringArray("", "Sans-Serif")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50142"]
+bg_color = Color(0.12315708, 0.23435098, 0.15601972, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="PauseMenu" type="Control" unique_id=1502801388]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1950275088]
+layout_mode = 0
+offset_right = 917.0
+offset_bottom = 742.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=583429457]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -60.0
+offset_right = 175.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=181568680]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_euhrg")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
+text = "Start Game"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=807294878]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_euhrg")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1131988449]
+custom_minimum_size = Vector2(350, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_euhrg")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_50142")
+text = "Start Game"
