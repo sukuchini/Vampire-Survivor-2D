@@ -1,5 +1,7 @@
 extends CheckButton
 
+func _ready() -> void:
+	print("Fullscreen al inciar:", button_pressed)
 
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on == true:

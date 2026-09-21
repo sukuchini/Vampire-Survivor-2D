@@ -24,13 +24,23 @@ bg_color = Color(0.12156863, 0.23529412, 0.15686275, 1)
 [sub_resource type="SystemFont" id="SystemFont_xqe8j"]
 font_names = PackedStringArray("Sans-Serif")
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_xxpcc"]
-color = Color(0.92941177, 0.6, 0.6039216, 1)
-thickness = 20
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5wg5"]
+content_margin_left = 0.0
+content_margin_top = 16.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_xqe8j"]
-color = Color(1, 1, 1, 1)
-thickness = 20
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c04x"]
+bg_color = Color(0.17238623, 0.7668787, 0.46151417, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
 bg_color = Color(1, 1, 1, 1)
@@ -95,6 +105,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main_Buttons" type="HBoxContainer" parent="MarginContainer" unique_id=1493873766]
+visible = false
 layout_mode = 2
 alignment = 1
 
@@ -162,6 +173,34 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Audio_Settings" type="HSlider" parent="Settings/Label" unique_id=353177851]
+layout_mode = 0
+offset_left = 19.25
+offset_top = 35.0
+offset_right = 569.25
+offset_bottom = 293.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_i5wg5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3c04x")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_d3a7t")
+audio_bus_name = "Master"
+
+[node name="SFX_Settings" type="HSlider" parent="Settings/Label" unique_id=7474966]
+layout_mode = 0
+offset_left = 19.25
+offset_top = 144.0
+offset_right = 569.25
+offset_bottom = 402.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_i5wg5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3c04x")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("2_d3a7t")
+audio_bus_name = "SFX"
+
 [node name="Master_Volume" type="Label" parent="Settings" unique_id=761938815]
 layout_mode = 1
 offset_left = 47.0
@@ -185,44 +224,6 @@ theme_override_font_sizes/font_size = 36
 text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Audio_Settings" type="HSlider" parent="Settings" unique_id=1391288200]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -623.5
-offset_top = 155.0
-offset_right = -48.5
-offset_bottom = 175.5
-grow_horizontal = 0
-theme_override_styles/slider = SubResource("StyleBoxLine_xxpcc")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_xqe8j")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_xqe8j")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("2_d3a7t")
-audio_bus_name = "Music"
-
-[node name="Audio_Settings2" type="HSlider" parent="Settings" unique_id=551810601]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -623.5
-offset_top = 264.0
-offset_right = -48.5
-offset_bottom = 284.5
-grow_horizontal = 0
-theme_override_styles/slider = SubResource("StyleBoxLine_xxpcc")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_xqe8j")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_xqe8j")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("2_d3a7t")
-audio_bus_name = "Music"
 
 [node name="Back_Button" type="Button" parent="Settings" unique_id=930196978]
 custom_minimum_size = Vector2(300, 84)
@@ -263,6 +264,6 @@ theme_override_font_sizes/font_size = 36
 text = "Fullscreen"
 script = ExtResource("4_bws42")
 
-[connection signal="value_changed" from="Settings/Audio_Settings" to="Settings/Audio_Settings" method="_on_value_changed"]
-[connection signal="value_changed" from="Settings/Audio_Settings2" to="Settings/Audio_Settings2" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/Label/Audio_Settings" to="Settings/Label/Audio_Settings" method="_on_value_changed"]
+[connection signal="value_changed" from="Settings/Label/SFX_Settings" to="Settings/Label/SFX_Settings" method="_on_value_changed"]
 [connection signal="toggled" from="Settings/Fullscreen_Control" to="Settings/Fullscreen_Control" method="_on_toggled"]
