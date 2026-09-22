@@ -105,7 +105,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Main_Buttons" type="HBoxContainer" parent="MarginContainer" unique_id=1493873766]
-visible = false
 layout_mode = 2
 alignment = 1
 
@@ -145,6 +144,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_75k1g")
 text = "Exit"
 
 [node name="Settings" type="Panel" parent="." unique_id=748172289]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://scenes/player.tscn" id="1_3cish"]
 [ext_resource type="Script" uid="uid://c1bfau31nfqio" path="res://scripts/survivors_game.gd" id="1_l26od"]
 [ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://scenes/pine_tree.tscn" id="2_y3pti"]
+[ext_resource type="PackedScene" uid="uid://b2oy7eeihb4gm" path="res://ui/pause_menu/pause_menu.tscn" id="4_uhra2"]
 
 [sub_resource type="Curve2D" id="Curve2D_qqaft"]
 _data = {
@@ -86,6 +87,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 173
 text = "GAME OVER"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=190586108]
+
+[node name="PauseMenu" parent="CanvasLayer2" unique_id=1502801388 instance=ExtResource("4_uhra2")]
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
