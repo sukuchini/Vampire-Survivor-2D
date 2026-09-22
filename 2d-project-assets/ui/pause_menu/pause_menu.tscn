@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b2oy7eeihb4gm"]
 
+[ext_resource type="Script" uid="uid://n1ra5mebmb48" path="res://scripts/ui/pause_menu.gd" id="1_jbgdu"]
 [ext_resource type="Shader" uid="uid://b3w1n5jtq01tx" path="res://ui/pause_menu/pause_menu.gdshader" id="1_mnjdh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_50142"]
@@ -8,6 +9,7 @@ shader_parameter/lod = 0.0
 
 [sub_resource type="SystemFont" id="SystemFont_euhrg"]
 font_names = PackedStringArray("", "Sans-Serif")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50142"]
 bg_color = Color(0.12315708, 0.23435098, 0.15601972, 1)
@@ -16,12 +18,126 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="Animation" id="Animation_jbgdu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_mnjdh"]
 resource_name = "blur"
 length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 1, -0.050000004, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jbgdu"]
 _data = {
+&"RESET": SubResource("Animation_jbgdu"),
 &"blur": SubResource("Animation_mnjdh")
 }
 
@@ -33,6 +149,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jbgdu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=376395966]
 material = SubResource("ShaderMaterial_50142")
@@ -44,6 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="." unique_id=1950275088]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
