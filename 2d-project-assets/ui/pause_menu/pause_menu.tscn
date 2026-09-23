@@ -145,6 +145,7 @@ _data = {
 
 [sub_resource type="SystemFont" id="SystemFont_uraes"]
 font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihaig"]
 content_margin_left = 0.0
@@ -166,6 +167,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="SystemFont" id="SystemFont_3qrb2"]
 font_names = PackedStringArray("", "Sans-Serif")
+subpixel_positioning = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b05md"]
 bg_color = Color(1, 1, 1, 1)
@@ -176,6 +178,7 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="SystemFont" id="SystemFont_f2x4c"]
 font_names = PackedStringArray("Sans-Serif")
+subpixel_positioning = 0
 
 [node name="PauseMenu" type="Control" unique_id=1502801388]
 process_mode = 3
@@ -274,7 +277,6 @@ text = "Exit"
 libraries/ = SubResource("AnimationLibrary_jbgdu")
 
 [node name="Settings" type="Panel" parent="." unique_id=895439933]
-process_mode = 3
 visible = false
 layout_mode = 1
 anchors_preset = 8
