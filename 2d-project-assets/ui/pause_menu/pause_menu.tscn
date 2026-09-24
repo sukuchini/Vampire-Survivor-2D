@@ -399,7 +399,6 @@ script = ExtResource("4_c3jo5")
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="Settings/Label/Audio_Settings" to="Settings/Label/Audio_Settings" method="_on_value_changed"]
 [connection signal="value_changed" from="Settings/Label/SFX_Settings" to="Settings/Label/SFX_Settings" method="_on_value_changed"]

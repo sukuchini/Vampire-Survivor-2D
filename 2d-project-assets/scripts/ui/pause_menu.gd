@@ -6,45 +6,59 @@ extends Control
 #Funciones
 
 func _ready():
+	panel.visible = false
+	settings.visible = false
 	$AnimationPlayer.play("RESET")
 
+
 func resume():
+	print("RESUME SE ESTÁ EJECUTANDO!!")
+	#Reanuda el juego, oculta la UI
 	get_tree().paused = false
+	panel.visible = false
+	settings.visible = false
 	$AnimationPlayer.play_backwards("blur")
 
+
 func pause():
+	print("PAUSE SE ESTÁ EJECUTANDO!!!")
+	#Pausa el juego, abre el menu pausa
 	get_tree().paused = true
+	settings.visible = false
+	panel.visible = true
+	$AnimationPlayer.play("blur")
+
+
+func back_to_mpause():
+	#Oculta settings y abre menu pausa
+	settings.visible = false
+	panel.visible = true
 	$AnimationPlayer.play("blur")
 
 
 func exit():
 	get_tree().quit()
 
-#Testear si Esc funciona y abre el menu
+
+#Funciones al presionar Esc
 func testEsc():
 	if Input.is_action_just_pressed("esc"):
-	
-		print("ESC PULSADO")
-		print("PAUSADO ", get_tree().paused)
-		print("SETTINGS: ", settings.visible)
 		
-		if get_tree().paused == false:
-			print("-> LLAMANDO A PAUSE")
-			pause()
-	
-		elif settings.visible == true:
-			print("-> CERRANDO SETTINGS")
-			settings.visible = false
-			panel.visible = true
+			#Si estas en el menu de ajustes, Esc= volver al menu de pausa
+			if settings.visible:
+				back_to_mpause()
 
-		else:
-			print("-> LLAMANDO RESUME")
-			resume()
+			#Si estas en el menu de pausa, Esc= vuelves al juego
+			elif get_tree().paused:
+				resume()
+			
+			#Sino, pausa
+			else:
+				pause()
 
 #Funciones de los botones
 func _on_resume_button_pressed() -> void:
 	resume()
-
 
 func _on_restart_button_pressed() -> void:
 	resume()
@@ -53,12 +67,9 @@ func _on_restart_button_pressed() -> void:
 func _on_settings_pressed() -> void:
 	panel.visible = false
 	settings.visible = true
-	print("PAUSADO: ", get_tree().paused)
 
 func _on_back_button_pressed() -> void:
-	settings.visible = false
-	panel.visible = true
-	$AnimationPlayer.play("blur")
+	back_to_mpause()
 
 
 func _on_exit_button_pressed() -> void:
