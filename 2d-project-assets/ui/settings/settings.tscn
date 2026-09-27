@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://bk4ob57e3tsvd"]
+
+[ext_resource type="Script" uid="uid://deq3ky41splyl" path="res://scripts/ui/settings.gd" id="1_feasd"]
+[ext_resource type="Script" uid="uid://d2lhqy7fuks48" path="res://scripts/ui/audio_settings.gd" id="1_pcnwc"]
+[ext_resource type="PackedScene" uid="uid://524umh7keafh" path="res://ui/settings/window_mode_button.tscn" id="4_gweul"]
+[ext_resource type="PackedScene" uid="uid://cttbf7rtaplfs" path="res://ui/settings/resolution_mode_button.tscn" id="4_y7dpk"]
+
+[sub_resource type="SystemFont" id="SystemFont_b4b0p"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3jo5"]
+content_margin_left = 0.0
+content_margin_top = 16.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uraes"]
+bg_color = Color(0.17238623, 0.7668787, 0.46151417, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_ryoa4"]
+
+[sub_resource type="SystemFont" id="SystemFont_umsyg"]
+font_names = PackedStringArray("", "Sans-Serif")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qrb2"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Settings" type="Panel" unique_id=448782297]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -511.75
+offset_top = -361.5
+offset_right = 511.75
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_feasd")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=684662256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=909627541]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label_Settings" type="Label" parent="MarginContainer/VBoxContainer" unique_id=648648216]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_b4b0p")
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1576922788]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label_MV" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1584892826]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_b4b0p")
+theme_override_font_sizes/font_size = 32
+text = "Master Volume"
+vertical_alignment = 1
+
+[node name="Audio_Settings" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=649838939]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 2.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_c3jo5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_uraes")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("1_pcnwc")
+audio_bus_name = "Master"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1067682665]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label_Sfx" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1365617584]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_ryoa4")
+theme_override_font_sizes/font_size = 32
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SFX_Settings" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1084412682]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 2.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_c3jo5")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_uraes")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("1_pcnwc")
+audio_bus_name = "SFX"
+
+[node name="Window_Mode_Button" parent="MarginContainer/VBoxContainer" unique_id=1061381141 instance=ExtResource("4_gweul")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Resolution_Mode_Button" parent="MarginContainer/VBoxContainer" unique_id=1610573867 instance=ExtResource("4_y7dpk")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back_Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1646251328]
+custom_minimum_size = Vector2(300, 84)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_umsyg")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qrb2")
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer/Audio_Settings" to="MarginContainer/VBoxContainer/HBoxContainer/Audio_Settings" method="_on_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/HBoxContainer2/SFX_Settings" to="MarginContainer/VBoxContainer/HBoxContainer2/SFX_Settings" method="_on_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back_Button" to="." method="_on_back_button_pressed"]

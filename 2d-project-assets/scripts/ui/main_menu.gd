@@ -5,7 +5,7 @@ extends Control
 @onready var exit_button: Button = $MarginContainer/Main_Buttons/VBoxContainer/Exit_Button
 @onready var settings: Panel = $Settings
 @onready var main_buttons: HBoxContainer = $MarginContainer/Main_Buttons
-@onready var back_button: Button = $Settings/Back_Button
+
 
 
 @onready var start_level = preload("res://scenes/survivors_game.tscn") as PackedScene
@@ -14,7 +14,7 @@ func _ready():
 	start_button.button_down.connect(on_start_pressed)
 	exit_button.button_down.connect(on_exit_pressed)
 	settings_button.button_down.connect(on_settings_pressed)
-	back_button.button_down.connect(on_back_pressed)
+	settings.back_pressed.connect(on_back_pressed)
 	
 
 func on_start_pressed() -> void:

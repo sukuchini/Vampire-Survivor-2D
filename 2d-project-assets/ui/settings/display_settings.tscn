@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://vc2if581hy5f"]
+
+[sub_resource type="SystemFont" id="SystemFont_5at5d"]
+
+[node name="Display_Options_Button" type="HBoxContainer" unique_id=627358410]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+alignment = 2
+
+[node name="Label" type="Label" parent="." unique_id=429004660]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = SubResource("SystemFont_5at5d")
+theme_override_font_sizes/font_size = 32
+text = "BASE_LABEL"
+
+[node name="Control" type="Control" parent="." unique_id=1748773073]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=406217125]
+custom_minimum_size = Vector2(256, 68)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0

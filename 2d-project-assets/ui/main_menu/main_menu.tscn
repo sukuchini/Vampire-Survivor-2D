@@ -2,8 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bbi51hlqj3ycq" path="res://themes/main_menu_theme.tres" id="1_3shxk"]
 [ext_resource type="Script" uid="uid://bon16olch8j1n" path="res://scripts/ui/main_menu.gd" id="1_oa53l"]
-[ext_resource type="Script" uid="uid://d2lhqy7fuks48" path="res://scripts/ui/audio_settings.gd" id="2_d3a7t"]
-[ext_resource type="Script" uid="uid://cwovuia511ku1" path="res://scripts/ui/fullscreen_control.gd" id="4_bws42"]
+[ext_resource type="PackedScene" uid="uid://bk4ob57e3tsvd" path="res://ui/settings/settings.tscn" id="3_omy8q"]
 
 [sub_resource type="SystemFont" id="SystemFont_xxpcc"]
 font_names = PackedStringArray("Impact")
@@ -20,37 +19,6 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75k1g"]
 bg_color = Color(0.12156863, 0.23529412, 0.15686275, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_xqe8j"]
-font_names = PackedStringArray("Sans-Serif")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5wg5"]
-content_margin_left = 0.0
-content_margin_top = 16.0
-content_margin_right = 8.0
-content_margin_bottom = 6.0
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c04x"]
-bg_color = Color(0.17238623, 0.7668787, 0.46151417, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3a7t"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="SystemFont" id="SystemFont_ohsdf"]
-font_names = PackedStringArray("Sans-Serif")
 
 [node name="Main_Menu" type="Control" unique_id=884601407]
 layout_mode = 3
@@ -143,127 +111,10 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_75k1g")
 text = "Exit"
 
-[node name="Settings" type="Panel" parent="." unique_id=748172289]
+[node name="Settings" parent="." unique_id=448782297 instance=ExtResource("3_omy8q")]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -512.0
-offset_top = -242.0
-offset_right = 511.5
-offset_bottom = 481.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Settings" unique_id=1122109567]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -81.5
-offset_right = 81.5
-offset_bottom = 102.0
-grow_horizontal = 2
-theme_override_fonts/font = SubResource("SystemFont_xqe8j")
-theme_override_font_sizes/font_size = 48
-text = "SETTINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Audio_Settings" type="HSlider" parent="Settings/Label" unique_id=353177851]
-layout_mode = 0
-offset_left = 19.25
-offset_top = 35.0
-offset_right = 569.25
-offset_bottom = 293.0
-theme_override_styles/slider = SubResource("StyleBoxFlat_i5wg5")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3c04x")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("2_d3a7t")
-audio_bus_name = "Master"
-
-[node name="SFX_Settings" type="HSlider" parent="Settings/Label" unique_id=7474966]
-layout_mode = 0
-offset_left = 19.25
-offset_top = 144.0
-offset_right = 569.25
-offset_bottom = 402.0
-theme_override_styles/slider = SubResource("StyleBoxFlat_i5wg5")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3c04x")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("2_d3a7t")
-audio_bus_name = "SFX"
-
-[node name="Master_Volume" type="Label" parent="Settings" unique_id=761938815]
-layout_mode = 1
-offset_left = 47.0
-offset_top = 113.0
-offset_right = 367.0
-offset_bottom = 215.0
-theme_override_fonts/font = SubResource("SystemFont_xqe8j")
-theme_override_font_sizes/font_size = 36
-text = "Master Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Sfx" type="Label" parent="Settings" unique_id=974077735]
-layout_mode = 1
-offset_left = 47.0
-offset_top = 224.0
-offset_right = 367.0
-offset_bottom = 326.0
-theme_override_fonts/font = SubResource("SystemFont_xqe8j")
-theme_override_font_sizes/font_size = 36
-text = "SFX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Back_Button" type="Button" parent="Settings" unique_id=930196978]
-custom_minimum_size = Vector2(300, 84)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -106.0
-offset_right = 150.0
-offset_bottom = -22.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_ehwb3")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_d3a7t")
-text = "Back"
-
-[node name="Fullscreen_Control" type="CheckButton" parent="Settings" unique_id=1328923596]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -423.75
-offset_top = -12.0
-offset_right = 467.25
-offset_bottom = 132.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_ohsdf")
-theme_override_font_sizes/font_size = 36
-text = "Fullscreen"
-script = ExtResource("4_bws42")
-
-[connection signal="value_changed" from="Settings/Label/Audio_Settings" to="Settings/Label/Audio_Settings" method="_on_value_changed"]
-[connection signal="value_changed" from="Settings/Label/SFX_Settings" to="Settings/Label/SFX_Settings" method="_on_value_changed"]
-[connection signal="toggled" from="Settings/Fullscreen_Control" to="Settings/Fullscreen_Control" method="_on_toggled"]
+offset_left = -547.0
+offset_top = -528.0
+offset_right = 547.0
+offset_bottom = 528.0

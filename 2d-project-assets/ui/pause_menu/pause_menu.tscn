@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n1ra5mebmb48" path="res://scripts/ui/pause_menu.gd" id="1_jbgdu"]
 [ext_resource type="Shader" uid="uid://b3w1n5jtq01tx" path="res://ui/pause_menu/pause_menu.gdshader" id="1_mnjdh"]
-[ext_resource type="Script" uid="uid://d2lhqy7fuks48" path="res://scripts/ui/audio_settings.gd" id="3_b4b0p"]
-[ext_resource type="Script" uid="uid://cwovuia511ku1" path="res://scripts/ui/fullscreen_control.gd" id="4_c3jo5"]
+[ext_resource type="PackedScene" uid="uid://bk4ob57e3tsvd" path="res://ui/settings/settings.tscn" id="3_le02u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_50142"]
 shader = ExtResource("1_mnjdh")
@@ -143,43 +142,6 @@ _data = {
 &"blur": SubResource("Animation_mnjdh")
 }
 
-[sub_resource type="SystemFont" id="SystemFont_uraes"]
-font_names = PackedStringArray("Sans-Serif")
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ihaig"]
-content_margin_left = 0.0
-content_margin_top = 16.0
-content_margin_right = 8.0
-content_margin_bottom = 6.0
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_umsyg"]
-bg_color = Color(0.17238623, 0.7668787, 0.46151417, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="SystemFont" id="SystemFont_3qrb2"]
-font_names = PackedStringArray("", "Sans-Serif")
-subpixel_positioning = 0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b05md"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="SystemFont" id="SystemFont_f2x4c"]
-font_names = PackedStringArray("Sans-Serif")
-subpixel_positioning = 0
-
 [node name="PauseMenu" type="Control" unique_id=1502801388]
 process_mode = 3
 layout_mode = 3
@@ -276,131 +238,10 @@ text = "Exit"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1123951212]
 libraries/ = SubResource("AnimationLibrary_jbgdu")
 
-[node name="Settings" type="Panel" parent="." unique_id=895439933]
-visible = false
+[node name="Settings" parent="." unique_id=448782297 instance=ExtResource("3_le02u")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -333.0
-offset_top = -361.5
-offset_right = 335.0
-offset_bottom = 361.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Settings" unique_id=726184384]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -81.5
-offset_right = 81.5
-offset_bottom = 102.0
-grow_horizontal = 2
-theme_override_fonts/font = SubResource("SystemFont_uraes")
-theme_override_font_sizes/font_size = 48
-text = "SETTINGS"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Audio_Settings" type="HSlider" parent="Settings/Label" unique_id=1270343172]
-layout_mode = 0
-offset_left = 19.25
-offset_top = 96.0
-offset_right = 420.0
-offset_bottom = 354.0
-theme_override_styles/slider = SubResource("StyleBoxFlat_ihaig")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_umsyg")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("3_b4b0p")
-audio_bus_name = "Master"
-
-[node name="SFX_Settings" type="HSlider" parent="Settings/Label" unique_id=1642208043]
-layout_mode = 0
-offset_left = 19.25
-offset_top = 206.0
-offset_right = 419.0
-offset_bottom = 464.0
-theme_override_styles/slider = SubResource("StyleBoxFlat_ihaig")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_umsyg")
-max_value = 1.0
-step = 0.05
-value = 1.0
-script = ExtResource("3_b4b0p")
-audio_bus_name = "SFX"
-
-[node name="Master_Volume" type="Label" parent="Settings" unique_id=2138806968]
-layout_mode = 1
-offset_left = 23.0
-offset_top = 173.5
-offset_right = 343.0
-offset_bottom = 275.5
-theme_override_fonts/font = SubResource("SystemFont_uraes")
-theme_override_font_sizes/font_size = 24
-text = "Master Volume"
-vertical_alignment = 1
-
-[node name="Sfx" type="Label" parent="Settings" unique_id=1849193915]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 26.0
-offset_top = -79.0
-offset_right = 346.0
-offset_bottom = 23.0
-grow_vertical = 2
-theme_override_fonts/font = SubResource("SystemFont_uraes")
-theme_override_font_sizes/font_size = 24
-text = "SFX"
-vertical_alignment = 1
-
-[node name="Back_Button" type="Button" parent="Settings" unique_id=219158094]
-custom_minimum_size = Vector2(300, 84)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -106.0
-offset_right = 150.0
-offset_bottom = -22.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_3qrb2")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_b05md")
-text = "Back"
-
-[node name="Fullscreen_Control" type="CheckButton" parent="Settings" unique_id=1590071172]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 20.0
-offset_top = -360.5
-offset_right = 628.0
-offset_bottom = -216.0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = SubResource("SystemFont_f2x4c")
-theme_override_font_sizes/font_size = 24
-text = "Fullscreen"
-script = ExtResource("4_c3jo5")
 
 [connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="value_changed" from="Settings/Label/Audio_Settings" to="Settings/Label/Audio_Settings" method="_on_value_changed"]
-[connection signal="value_changed" from="Settings/Label/SFX_Settings" to="Settings/Label/SFX_Settings" method="_on_value_changed"]
-[connection signal="pressed" from="Settings/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="toggled" from="Settings/Fullscreen_Control" to="Settings/Fullscreen_Control" method="_on_toggled"]

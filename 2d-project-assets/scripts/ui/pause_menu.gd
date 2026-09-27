@@ -8,6 +8,8 @@ extends Control
 func _ready():
 	panel.visible = false
 	settings.visible = false
+	
+	settings.back_pressed.connect(back_to_mpause)
 	$AnimationPlayer.play("RESET")
 
 
@@ -67,9 +69,6 @@ func _on_restart_button_pressed() -> void:
 func _on_settings_pressed() -> void:
 	panel.visible = false
 	settings.visible = true
-
-func _on_back_button_pressed() -> void:
-	back_to_mpause()
 
 
 func _on_exit_button_pressed() -> void:
