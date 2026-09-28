@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vc2if581hy5f"]
 
 [sub_resource type="SystemFont" id="SystemFont_5at5d"]
+subpixel_positioning = 0
 
 [node name="Display_Options_Button" type="HBoxContainer" unique_id=627358410]
 offset_right = 40.0
