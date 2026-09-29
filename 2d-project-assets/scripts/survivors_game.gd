@@ -1,18 +1,42 @@
 extends Node2D
 
+const BOMB_SCENE = preload("res://scenes/bomb.tscn")
+
+@onready var mob_timer: Timer = $MobTimer
+@onready var bomb_timer: Timer = $BombTimer
+
+
 func spawn_mob():
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
 	add_child(new_mob)
-	
 
+func spawn_bomb():
+	spawn_item(BOMB_SCENE)
 
-func _on_timer_timeout() -> void:
-	spawn_mob()
-
-
+#Cuando muera el player sale el Game Over
 func _on_player_health_depleted() -> void:
 	%GameOver.visible = true
 	AudioController.play_game_over()
 	get_tree().paused = true
+
+#Creamos una funcion para spawnear items
+func spawn_item(item_scene: PackedScene):
+	var new_item = item_scene.instantiate()
+	add_child(new_item)
+
+#Cuando se acabe los timers, spawneas los elementos
+func _on_mob_timer_timeout() -> void:
+	spawn_mob()
+
+func _on_bomb_timer_timeout() -> void:
+	spawn_bomb()
+
+func _ready() -> void:
+	#Creamos el timer para los mobs
+	$MobTimer.wait_time = randf_range(0.2, 0.6)
+	$MobTimer.start()
+	$BombTimer.wait_time= randf_range(1.0, 2.0)
+	$BombTimer.start()
+	

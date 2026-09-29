@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cvfyleq86j8pi"]
+
+[ext_resource type="Texture2D" uid="uid://dt07wm0twn32v" path="res://sprites/bomb/bomb4.png" id="1_jxkek"]
+[ext_resource type="Texture2D" uid="uid://dm17nhg7bke65" path="res://sprites/bomb/bomb3.png" id="2_7ai58"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jxkek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7ai58")
+}],
+"loop": 1,
+"name": &"player_bomb",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1837807529]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=485311912]
+sprite_frames = SubResource("SpriteFrames_xxpcc")
+animation = &"player_bomb"
+frame_progress = 0.86824024

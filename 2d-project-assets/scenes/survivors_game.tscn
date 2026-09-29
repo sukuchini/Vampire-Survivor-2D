@@ -56,9 +56,10 @@ position = Vector2(1540, 254)
 [node name="StaticBody2D7" parent="." unique_id=1178530365 instance=ExtResource("2_y3pti")]
 position = Vector2(843, 760)
 
-[node name="Timer" type="Timer" parent="." unique_id=1798762291]
-wait_time = 0.34400000000000003
+[node name="MobTimer" type="Timer" parent="." unique_id=1798762291]
 autostart = true
+
+[node name="BombTimer" type="Timer" parent="." unique_id=2106684709]
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1959732486]
 unique_name_in_owner = true
@@ -95,4 +96,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="BombTimer" to="." method="_on_bomb_timer_timeout"]

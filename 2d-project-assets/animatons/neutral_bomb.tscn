@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drchess30i0d8"]
 
-[ext_resource type="Texture2D" uid="uid://bim402hlcibm0" path="res://sprites/bomb/bomb1.png" id="1_mf7ti"]
-[ext_resource type="Texture2D" uid="uid://bn3o1wg03ovo8" path="res://sprites/bomb/bomb2.png" id="2_lo0r3"]
+[ext_resource type="Texture2D" uid="uid://c563wwglsioch" path="res://sprites/bomb/bomb1.png" id="1_mf7ti"]
+[ext_resource type="Texture2D" uid="uid://k2k704xg3dpr" path="res://sprites/bomb/bomb2.png" id="2_lo0r3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
 animations = [{
@@ -22,3 +22,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1854478064]
 sprite_frames = SubResource("SpriteFrames_xxpcc")
 animation = &"neutral_bomb"
+frame_progress = 0.14678365
