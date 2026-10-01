@@ -6,10 +6,10 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("1_mf7ti")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("2_lo0r3")
 }],
 "loop": 1,
@@ -22,4 +22,4 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1854478064]
 sprite_frames = SubResource("SpriteFrames_xxpcc")
 animation = &"neutral_bomb"
-frame_progress = 0.14678365
+frame_progress = 0.11213154

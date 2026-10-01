@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://8acvv6blj47k"]
+
+[ext_resource type="Texture2D" uid="uid://c563wwglsioch" path="res://sprites/bomb/bomb1.png" id="1_elkq6"]
+[ext_resource type="Texture2D" uid="uid://k2k704xg3dpr" path="res://sprites/bomb/bomb2.png" id="2_wed2g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxpcc"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_elkq6")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_wed2g")
+}],
+"loop": 1,
+"name": &"neutral_bomb",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1404640645]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1854478064]
+sprite_frames = SubResource("SpriteFrames_xxpcc")
+animation = &"neutral_bomb"
+frame_progress = 0.6947055
