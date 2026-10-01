@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://chpui2heg80vv"]
 
 [ext_resource type="Texture2D" uid="uid://d0j6poyban5ao" path="res://assets/bomb1.png" id="1_4kkau"]
+[ext_resource type="Script" uid="uid://b5fgfettq35y5" path="res://scenes/bomb.gd" id="1_vpdcx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxpcc"]
 radius = 43.011627
 
-[node name="Area2D" type="Area2D" unique_id=741351567]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ehwb3"]
+radius = 335.0015
+
+[node name="Bomb" type="Area2D" unique_id=741351567]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_vpdcx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1001038914]
 position = Vector2(8, -15)
@@ -14,3 +21,8 @@ texture = ExtResource("1_4kkau")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308882893]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_xxpcc")
+
+[node name="ExplosionHitBox" type="Area2D" parent="." unique_id=1629317558]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionHitBox" unique_id=1356401714]
+shape = SubResource("CircleShape2D_ehwb3")

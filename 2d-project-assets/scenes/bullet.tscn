@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bd4rrqj72amnx" path="res://assets/pistol/projectile.png" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://cfjvwhypwf5h5" path="res://scripts/bullet.gd" id="1_v8qja"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxpcc"]
 radius = 18.0
 

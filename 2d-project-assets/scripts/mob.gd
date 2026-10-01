@@ -12,8 +12,9 @@ func _physics_process(delta):
 	velocity = direction * 300.0
 	move_and_slide()
 	
-func take_damage():
-	health -= 1
+#Pierde tanta vida como daño le hayan pasado a la funcion
+func take_damage(damage):
+	health -= damage
 	%Slime.play_hurt()
 	
 	if health == 0:
