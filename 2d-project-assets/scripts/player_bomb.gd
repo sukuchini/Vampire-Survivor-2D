@@ -2,28 +2,24 @@ extends Area2D
 
 @onready var explosion_timer: Timer = $ExplosionTimer
 @onready var warning_animation: AnimatedSprite2D = $WarningAnimation
-@onready var warning_timer: Timer = $WarningTimer
 @onready var explosion_hit_box: Area2D = $ExplosionHitBox
-@onready var color_rect: ColorRect = $ExplosionHitBox/ColorRect
+
 
 #Variable necesaria para gestionar la animacion de la explosion
 var explosion_fx: ExplosionFX
 
 #La bomba parpadea 7 segundos y cambia a animacion de explosion inminente
 func _on_explosion_timer_timeout() -> void:
-	warning_animation.stop()
-	warning_animation.play("fast_animation")
-	$WarningTimer.start()
-
-func _on_warning_timer_timeout() -> void:
 	explode()
+
 
 #Al explotar quita 15hp a enemigos y 30% al jugador
 func explode():
 	
 	#Termina la animacion de explosion inminente para explotar
-	AudioController.play_bomb_explosion(global_position)
 	warning_animation.stop()
+	#Suena la explosion
+	AudioController.play_bomb_explosion(global_position)
 	
 	#Animacion de explosion se ejecutara donde este la bomba
 	explosion_fx = ExplosionFX.spawn(
@@ -59,23 +55,11 @@ func explode():
 
 		if body.is_in_group("enemy"):
 			body.take_damage(15)
-		
-		elif body.is_in_group("player"):
-
-			body.take_damage(body.max_health * 0.3)
 
 #Cuando se acabe la animacion, la bomba se destruye
 func _on_explosion_finished() -> void:
 	queue_free()
 
-# Si el jugador toca la bomba, la recoge
-func _on_body_entered(body) -> void:
-	if body.is_in_group("player"):
-		AudioController.play_pick_up_item()
-		body.obtaining_item("bombs")
-		queue_free()
-
-
 func _ready() -> void:
-	warning_animation.play("slow_animation")
+	warning_animation.play("fast_animation")
 	$ExplosionTimer.start()

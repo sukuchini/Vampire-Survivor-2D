@@ -42,3 +42,13 @@ func take_damage(damage):
 func obtaining_item(item):
 	inventory[item] += 1
 	print(inventory)
+
+func drop_bomb() -> void:
+	var player_bomb = preload("res://scenes/player_bomb.tscn").instantiate()
+	if inventory["bombs"] > 0:
+		get_parent().add_child(player_bomb)
+		player_bomb.global_position = global_position
+		
+func right_click():
+	if Input.is_action_just_pressed("right_click"):
+		drop_bomb()

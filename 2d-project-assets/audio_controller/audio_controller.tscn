@@ -6,10 +6,12 @@
 [ext_resource type="AudioStream" uid="uid://jbxnp2mca3hb" path="res://music/mixkit-player-losing-or-failing-2042.wav" id="3_xujww"]
 [ext_resource type="AudioStream" uid="uid://usndixfi8qte" path="res://music/mixkit-creature-cry-of-hurt-2208.wav" id="4_xujww"]
 [ext_resource type="AudioStream" uid="uid://bdsm2if4eqgsq" path="res://music/the_mountain-retro-game-593063.mp3" id="5_blxgy"]
-
+[ext_resource type="AudioStream" uid="uid://c0kt7exvagyfu" path="res://music/edr-power-up-01a-484722.mp3" id="7_qbdg6"]
+[ext_resource type="AudioStream" uid="uid://dfxx3waubpyak" path="res://music/dennish18-small-explosion-129477.mp3" id="8_dwx8q"]
 
 [node name="AudioController" type="Node2D" unique_id=1573015542]
 script = ExtResource("1_blxgy")
+mute = null
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1571086904]
 stream = ExtResource("1_aufy8")
@@ -30,3 +32,11 @@ bus = &"Music"
 [node name="GameOver" type="AudioStreamPlayer" parent="." unique_id=1140486823]
 stream = ExtResource("3_xujww")
 bus = &"Music"
+
+[node name="PickUpItem" type="AudioStreamPlayer" parent="." unique_id=1748830033]
+stream = ExtResource("7_qbdg6")
+bus = &"SFX"
+
+[node name="BombExplosion" type="AudioStreamPlayer2D" parent="." unique_id=1041450054]
+stream = ExtResource("8_dwx8q")
+bus = &"SFX"

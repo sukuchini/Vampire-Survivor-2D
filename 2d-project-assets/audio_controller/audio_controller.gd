@@ -30,3 +30,12 @@ func play_game_over() -> void:
 	if not mute:
 		$Music.stop()
 		$GameOver.play()
+		
+func  play_pick_up_item() -> void:
+	if not mute:
+		$PickUpItem.play()
+
+func play_bomb_explosion(pos: Vector2) -> void:
+	if not mute:
+		$BombExplosion.global_position = pos
+		$BombExplosion.play()
