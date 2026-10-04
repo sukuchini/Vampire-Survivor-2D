@@ -15,13 +15,39 @@ point_count = 6
 y_sort_enabled = true
 script = ExtResource("1_l26od")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2081939840]
+[node name="Background" type="CanvasLayer" parent="." unique_id=2081939840]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1422985025]
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1422985025]
 offset_right = 1960.0
 offset_bottom = 1153.0
 color = Color(0.7607843, 0.9529412, 0.827451, 1)
+
+[node name="Inventory" type="CanvasLayer" parent="." unique_id=1028459431]
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory" unique_id=239124093]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/MarginContainer" unique_id=798358068]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Inventory/MarginContainer/HBoxContainer" unique_id=1169975265]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 48
+text = "BOMBS: 00"
 
 [node name="Player" parent="." unique_id=1590897739 instance=ExtResource("1_3cish")]
 position = Vector2(892, 515)
@@ -104,9 +130,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 173
 text = "GAME OVER"
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=190586108]
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=190586108]
 
-[node name="PauseMenu" parent="CanvasLayer2" unique_id=1502801388 instance=ExtResource("4_uhra2")]
+[node name="PauseMenu" parent="PauseMenu" unique_id=1502801388 instance=ExtResource("4_uhra2")]
 size_flags_horizontal = 4
 size_flags_vertical = 4
 

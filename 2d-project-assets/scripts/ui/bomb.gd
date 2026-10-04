@@ -23,7 +23,7 @@ func explode():
 	
 	#Termina la animacion de explosion inminente para explotar
 	AudioController.play_bomb_explosion(global_position)
-	warning_animation.stop()
+	warning_animation.visible = false
 	
 	#Animacion de explosion se ejecutara donde este la bomba
 	explosion_fx = ExplosionFX.spawn(

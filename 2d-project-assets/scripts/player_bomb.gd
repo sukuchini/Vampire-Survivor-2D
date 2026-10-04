@@ -17,7 +17,7 @@ func _on_explosion_timer_timeout() -> void:
 func explode():
 	
 	#Termina la animacion de explosion inminente para explotar
-	warning_animation.stop()
+	warning_animation.visible = false
 	#Suena la explosion
 	AudioController.play_bomb_explosion(global_position)
 	
