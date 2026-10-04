@@ -34,6 +34,9 @@ func _physics_process(delta):
 		if health <= 0.0:
 			health_depleted.emit()
 			
+	#Comprobar si pulsa click derecho
+	right_click()
+	
 #Pierde tanta vida como daño le hayan pasado a la funcion (bomba)
 func take_damage(damage):
 	health -= damage
@@ -48,7 +51,9 @@ func drop_bomb() -> void:
 	if inventory["bombs"] > 0:
 		get_parent().add_child(player_bomb)
 		player_bomb.global_position = global_position
+		inventory["bombs"] -= 1
 		
 func right_click():
 	if Input.is_action_just_pressed("right_click"):
 		drop_bomb()
+		print(inventory)

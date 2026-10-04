@@ -46,7 +46,7 @@ position = Vector2(-7, 16)
 shape = SubResource("CircleShape2D_ehwb3")
 
 [node name="ExplosionTimer" type="Timer" parent="." unique_id=591939818]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
