@@ -35,40 +35,40 @@ unique_name_in_owner = true
 position = Vector2(-187, -308)
 rotation = -0.0004237288
 
-[node name="StaticBody2D" parent="." unique_id=1792052463 instance=ExtResource("2_y3pti")]
+[node name="Tree1" parent="." unique_id=1792052463 instance=ExtResource("2_y3pti")]
 position = Vector2(542, 289)
 
-[node name="StaticBody2D2" parent="." unique_id=1963151881 instance=ExtResource("2_y3pti")]
+[node name="Tree2" parent="." unique_id=1963151881 instance=ExtResource("2_y3pti")]
 position = Vector2(141, 190)
 
-[node name="StaticBody2D3" parent="." unique_id=613647483 instance=ExtResource("2_y3pti")]
+[node name="Tree3" parent="." unique_id=613647483 instance=ExtResource("2_y3pti")]
 position = Vector2(263, 495)
 
-[node name="StaticBody2D4" parent="." unique_id=1089845718 instance=ExtResource("2_y3pti")]
+[node name="Tree4" parent="." unique_id=1089845718 instance=ExtResource("2_y3pti")]
 position = Vector2(1359, 601)
 
-[node name="StaticBody2D5" parent="." unique_id=2085309895 instance=ExtResource("2_y3pti")]
+[node name="Tree5" parent="." unique_id=2085309895 instance=ExtResource("2_y3pti")]
 position = Vector2(1840, 156)
 
-[node name="StaticBody2D6" parent="." unique_id=368502710 instance=ExtResource("2_y3pti")]
+[node name="Tree6" parent="." unique_id=368502710 instance=ExtResource("2_y3pti")]
 position = Vector2(1540, 254)
 
-[node name="StaticBody2D7" parent="." unique_id=1178530365 instance=ExtResource("2_y3pti")]
+[node name="Tree7" parent="." unique_id=1178530365 instance=ExtResource("2_y3pti")]
 position = Vector2(702, 708)
 
-[node name="StaticBody2D8" parent="." unique_id=705233230 instance=ExtResource("2_y3pti")]
+[node name="Tree8" parent="." unique_id=705233230 instance=ExtResource("2_y3pti")]
 position = Vector2(284, 934)
 
-[node name="StaticBody2D9" parent="." unique_id=1380903663 instance=ExtResource("2_y3pti")]
+[node name="Tree9" parent="." unique_id=1380903663 instance=ExtResource("2_y3pti")]
 position = Vector2(1711, 922)
 
-[node name="StaticBody2D10" parent="." unique_id=218276394 instance=ExtResource("2_y3pti")]
+[node name="Tree10" parent="." unique_id=218276394 instance=ExtResource("2_y3pti")]
 position = Vector2(1598, 689)
 
-[node name="StaticBody2D11" parent="." unique_id=1327975425 instance=ExtResource("2_y3pti")]
+[node name="Tree11" parent="." unique_id=1327975425 instance=ExtResource("2_y3pti")]
 position = Vector2(1145, 1007)
 
-[node name="StaticBody2D12" parent="." unique_id=416614576 instance=ExtResource("2_y3pti")]
+[node name="Tree12" parent="." unique_id=416614576 instance=ExtResource("2_y3pti")]
 position = Vector2(1282, 160)
 
 [node name="MobTimer" type="Timer" parent="." unique_id=1798762291]

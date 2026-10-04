@@ -5,6 +5,7 @@ extends Control
 
 #Funciones
 
+#La UI empieza oculta, se conecta la funcion del boton "back" de settings
 func _ready():
 	panel.visible = false
 	settings.visible = false
@@ -12,32 +13,28 @@ func _ready():
 	settings.back_pressed.connect(back_to_mpause)
 	$AnimationPlayer.play("RESET")
 
-
+#Funcion para reanudar el juego y ocultar la UI
 func resume():
-	print("RESUME SE ESTÁ EJECUTANDO!!")
-	#Reanuda el juego, oculta la UI
 	get_tree().paused = false
 	panel.visible = false
 	settings.visible = false
 	$AnimationPlayer.play_backwards("blur")
 
-
+#Se pausa el juego, se muestra el menu
 func pause():
-	print("PAUSE SE ESTÁ EJECUTANDO!!!")
 	#Pausa el juego, abre el menu pausa
 	get_tree().paused = true
 	settings.visible = false
 	panel.visible = true
 	$AnimationPlayer.play("blur")
 
-
+#Oculta settings y abre menu pausa
 func back_to_mpause():
-	#Oculta settings y abre menu pausa
 	settings.visible = false
 	panel.visible = true
 	$AnimationPlayer.play("blur")
 
-
+#Cerrar el juego
 func exit():
 	get_tree().quit()
 
@@ -70,10 +67,8 @@ func _on_settings_pressed() -> void:
 	panel.visible = false
 	settings.visible = true
 
-
 func _on_exit_button_pressed() -> void:
 	exit()
-
 
 func _process(delta: float) -> void:
 	testEsc()
