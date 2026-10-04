@@ -6,11 +6,11 @@ signal health_depleted
 var max_health = 100.0
 var health = max_health
 
-##Inventario del jugador
-#var inventory = {
-	#"bomb" : 0,
-	#"healing heart" : 0,
-#}
+#Inventario del jugador
+var inventory = {
+	"bombs" : 0,
+	"healing heart" : 0,
+}
 
 #Movimiento del jugador
 func _physics_process(delta):
@@ -38,6 +38,7 @@ func _physics_process(delta):
 func take_damage(damage):
 	health -= damage
 	
-##Si el player toca un item antes de que se destruya, lo adquiere
-#func obtaining_item(item):
-	#inventory[item] += 1
+#Si el player toca un item antes de que se destruya, lo adquiere
+func obtaining_item(item):
+	inventory[item] += 1
+	print(inventory)

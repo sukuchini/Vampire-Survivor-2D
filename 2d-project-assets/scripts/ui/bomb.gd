@@ -4,7 +4,7 @@ extends Area2D
 @onready var warning_animation: AnimatedSprite2D = $WarningAnimation
 @onready var warning_timer: Timer = $WarningTimer
 @onready var explosion_hit_box: Area2D = $ExplosionHitBox
-@onready var color_rect: ColorRect = $ExplosionHitBox/ColorRect
+
 
 #Variable necesaria para gestionar la animacion de la explosion
 var explosion_fx: ExplosionFX
@@ -21,6 +21,8 @@ func _on_warning_timer_timeout() -> void:
 #Al explotar quita 15hp a enemigos y 30% al jugador
 func explode():
 	
+	#La bomba ya no puede obtenerse
+	$BombCollision.set_deferred("disabled", true)
 	#Termina la animacion de explosion inminente para explotar
 	warning_animation.stop()
 	
@@ -67,6 +69,12 @@ func explode():
 func _on_explosion_finished() -> void:
 	queue_free()
 
+func _on_body_entered(body: Node2D) -> void:
+	#Si el player toca la collision de la bomba, obtiene la bomba
+	if body.is_in_group("player"):
+		print("BOMBA RECOGIDA")
+		body.obtaining_item("bombs") 
+		queue_free()
 
 func _ready() -> void:
 	warning_animation.play("slow_animation")
