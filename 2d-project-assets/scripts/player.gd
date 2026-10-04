@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
+#SEÑALES PARA PASAR DATOS
+#Vida del jugador esta a cero
 signal health_depleted
+#Numero de bombas reflejadas en UI
+signal bombs_ui
 
-#Vida del jugados
+#Referencia a la UI
+@onready var inventory_ui: CanvasLayer = $"../InventoryUI"
+
+#Vida del player
 var max_health = 100.0
 var health = max_health
 
@@ -44,6 +51,7 @@ func take_damage(damage):
 #Si el player toca un item antes de que se destruya, lo adquiere
 func obtaining_item(item):
 	inventory[item] += 1
+	inventory_ui.set_bombs(inventory["bombs"])
 	print(inventory)
 
 func drop_bomb() -> void:
@@ -52,6 +60,7 @@ func drop_bomb() -> void:
 		get_parent().add_child(player_bomb)
 		player_bomb.global_position = global_position
 		inventory["bombs"] -= 1
+		inventory_ui.set_bombs(inventory["bombs"])
 		
 func right_click():
 	if Input.is_action_just_pressed("right_click"):

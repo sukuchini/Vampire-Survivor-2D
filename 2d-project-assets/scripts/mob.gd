@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+#Señal para avisar de que el slime a muerto y actualizar asi la puntuacion
+signal killed
+
 var health = 3
 
 @onready var player = get_node("/root/Game/Player")
@@ -22,6 +25,9 @@ func take_damage(damage):
 	#Si pierde toda la vida, el slime muere
 	if health <= 0:
 		AudioController.play_enemy_death(global_position)
+		
+		#Avisamos al Game de que el slime ha muerto
+		killed.emit()
 		queue_free()
 		
 		#Se ejecuta animacion de muerte en el lugar donde el slime muriera

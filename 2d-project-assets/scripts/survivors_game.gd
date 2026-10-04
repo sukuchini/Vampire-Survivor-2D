@@ -1,19 +1,33 @@
 extends Node2D
 
+#Cargo la bomba
 const BOMB_SCENE = preload("res://scenes/bomb.tscn")
 #Defino el area de spawn de los items
 const ITEM_SPAWN_AREA = Rect2(100, 100, 1720, 880)
 
+#Variables
+var score = 0
+
 @onready var mob_timer: Timer = $MobTimer
 @onready var bomb_timer: Timer = $BombTimer
+@onready var inventory_ui: CanvasLayer = $InventoryUI
 
 
+func on_enemy_killed():
+	score += 1
+	$InventoryUI.set_score(score)
+
+#Mob carga y spawnea en un lugar aleatorio del path
 func spawn_mob():
 	var new_mob = preload("res://scenes/mob.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_mob.global_position = %PathFollow2D.global_position
+	
+	#Conectamos la muerte del slime con la puntuacion
+	new_mob.killed.connect(on_enemy_killed)
 	add_child(new_mob)
 
+#Spawnea una bomba llamando a la funcion spawn_item
 func spawn_bomb():
 	spawn_item(BOMB_SCENE)
 
