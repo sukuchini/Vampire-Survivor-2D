@@ -2,6 +2,7 @@ extends Node2D
 
 #Cargo la bomba
 const BOMB_SCENE = preload("res://scenes/bomb.tscn")
+const HEART_SCENE = preload("res://scenes/healing_heart.tscn")
 #Defino el area de spawn de los items
 const ITEM_SPAWN_AREA = Rect2(100, 100, 1720, 880)
 
@@ -11,6 +12,7 @@ var score = 0
 @onready var mob_timer: Timer = $MobTimer
 @onready var bomb_timer: Timer = $BombTimer
 @onready var inventory_ui: CanvasLayer = $InventoryUI
+@onready var heart_timer: Timer = $HeartTimer
 
 
 func on_enemy_killed():
@@ -30,6 +32,9 @@ func spawn_mob():
 #Spawnea una bomba llamando a la funcion spawn_item
 func spawn_bomb():
 	spawn_item(BOMB_SCENE)
+
+func spawn_heart():
+	spawn_item(HEART_SCENE)
 
 #Cuando muera el player sale el Game Over
 func _on_player_health_depleted() -> void:
@@ -60,10 +65,16 @@ func _on_mob_timer_timeout() -> void:
 func _on_bomb_timer_timeout() -> void:
 	spawn_bomb()
 
+func _on_heart_timer_timeout() -> void:
+	spawn_heart()
+
 func _ready() -> void:
-	#Creamos el timer para los mobs
+	#Creamos los timers para los mobs y items
 	$MobTimer.wait_time = randf_range(0.2, 0.6)
 	$MobTimer.start()
 	$BombTimer.wait_time= randf_range(1.0, 2.0)
 	$BombTimer.start()
+	$HeartTimer.wait_time = randf_range(90.0, 150.0)
+	$HeartTimer.start()
+	
 	

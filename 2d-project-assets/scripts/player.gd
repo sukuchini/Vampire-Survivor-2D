@@ -47,6 +47,13 @@ func _physics_process(delta):
 #Pierde tanta vida como daño le hayan pasado a la funcion (bomba)
 func take_damage(damage):
 	health -= damage
+	%HealthBar.value = health
+
+#El player se cura tanta vida como el parametro que le hayan pasado
+func heal_damage(healed_amount):
+	health += healed_amount
+	health = min(health, max_health)
+	%HealthBar.value = health
 	
 #Si el player toca un item antes de que se destruya, lo adquiere
 func obtaining_item(item):

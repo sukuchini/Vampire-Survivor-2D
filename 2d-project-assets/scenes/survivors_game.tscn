@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c1sx7bic4uhdj" path="res://scenes/player.tscn" id="1_3cish"]
 [ext_resource type="Script" uid="uid://c1bfau31nfqio" path="res://scripts/survivors_game.gd" id="1_l26od"]
-[ext_resource type="Script" uid="uid://dy28q53w6sphk" path="res://scenes/inventory_ui.gd" id="2_t6sgc"]
+[ext_resource type="Script" uid="uid://dy28q53w6sphk" path="res://scripts/ui/inventory_ui.gd" id="2_t6sgc"]
 [ext_resource type="PackedScene" uid="uid://c0gpy0pye4jr6" path="res://scenes/pine_tree.tscn" id="2_y3pti"]
 [ext_resource type="PackedScene" uid="uid://b2oy7eeihb4gm" path="res://ui/pause_menu/pause_menu.tscn" id="4_uhra2"]
 
@@ -112,6 +112,8 @@ position = Vector2(1282, 160)
 [node name="MobTimer" type="Timer" parent="." unique_id=1798762291]
 autostart = true
 
+[node name="HeartTimer" type="Timer" parent="." unique_id=1005991384]
+
 [node name="BombTimer" type="Timer" parent="." unique_id=2106684709]
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=1959732486]
@@ -150,4 +152,5 @@ size_flags_vertical = 4
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="HeartTimer" to="." method="_on_heart_timer_timeout"]
 [connection signal="timeout" from="BombTimer" to="." method="_on_bomb_timer_timeout"]

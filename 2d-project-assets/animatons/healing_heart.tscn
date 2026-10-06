@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dfe8fj8x70ty"]
+
+[ext_resource type="Texture2D" uid="uid://c33tsh7boaiag" path="res://sprites/healing_heart/heart_container0020.png" id="1_67xuo"]
+[ext_resource type="Texture2D" uid="uid://b36p1d4520xsx" path="res://sprites/healing_heart/heart_container0021.png" id="2_4gmgx"]
+[ext_resource type="Texture2D" uid="uid://csl8gobjm6acu" path="res://sprites/healing_heart/heart_container0022.png" id="3_7pdkl"]
+[ext_resource type="Texture2D" uid="uid://cigywfndhbu6m" path="res://sprites/healing_heart/heart_container0023.png" id="4_34r31"]
+[ext_resource type="Texture2D" uid="uid://dlp47ybenmv45" path="res://sprites/healing_heart/heart_container0024.png" id="5_g2qfl"]
+[ext_resource type="Texture2D" uid="uid://xjg3uurg2adk" path="res://sprites/healing_heart/heart_container0025.png" id="6_xl3a5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tomap"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_67xuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4gmgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7pdkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_34r31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g2qfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xl3a5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=1300788242]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=154442159]
+scale = Vector2(0.30676794, 0.30791688)
+sprite_frames = SubResource("SpriteFrames_tomap")
+frame_progress = 0.21539924
