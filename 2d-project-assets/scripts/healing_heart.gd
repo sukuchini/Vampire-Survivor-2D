@@ -15,3 +15,4 @@ func _on_body_entered(body) -> void:
 
 func _ready() -> void:
 	$HeartAnimation.play("default")
+	AudioController.play_heart_spawn(global_position)

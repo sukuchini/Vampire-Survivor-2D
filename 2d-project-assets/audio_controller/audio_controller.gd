@@ -39,3 +39,8 @@ func play_bomb_explosion(pos: Vector2) -> void:
 	if not mute:
 		$BombExplosion.global_position = pos
 		$BombExplosion.play()
+
+func play_heart_spawn(pos: Vector2) -> void:
+	if not mute:
+		$HeartSpawn.global_position = pos
+		$HeartSpawn.play()

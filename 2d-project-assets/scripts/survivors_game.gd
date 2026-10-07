@@ -74,7 +74,7 @@ func _ready() -> void:
 	$MobTimer.start()
 	$BombTimer.wait_time= randf_range(1.0, 2.0)
 	$BombTimer.start()
-	$HeartTimer.wait_time = randf_range(90.0, 150.0)
+	$HeartTimer.wait_time = randf_range(90.0, 120.0)
 	$HeartTimer.start()
 	
 	

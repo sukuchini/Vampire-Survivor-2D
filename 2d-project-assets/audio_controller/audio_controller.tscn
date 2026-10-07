@@ -8,10 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://bdsm2if4eqgsq" path="res://music/the_mountain-retro-game-593063.mp3" id="5_blxgy"]
 [ext_resource type="AudioStream" uid="uid://c0kt7exvagyfu" path="res://music/edr-power-up-01a-484722.mp3" id="7_qbdg6"]
 [ext_resource type="AudioStream" uid="uid://dfxx3waubpyak" path="res://music/dennish18-small-explosion-129477.mp3" id="8_dwx8q"]
+[ext_resource type="AudioStream" uid="uid://cyylnwmjhlfh8" path="res://music/heal_sound.mp3" id="9_j4e2q"]
 
 [node name="AudioController" type="Node2D" unique_id=1573015542]
 script = ExtResource("1_blxgy")
-mute = null
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1571086904]
 stream = ExtResource("1_aufy8")
@@ -40,3 +40,6 @@ bus = &"SFX"
 [node name="BombExplosion" type="AudioStreamPlayer2D" parent="." unique_id=1041450054]
 stream = ExtResource("8_dwx8q")
 bus = &"SFX"
+
+[node name="HeartSpawn" type="AudioStreamPlayer2D" parent="." unique_id=166076569]
+stream = ExtResource("9_j4e2q")
