@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cjvi6hjcv3tmf"]
+
+[ext_resource type="Script" uid="uid://bw2ia6los0tes" path="res://scripts/items/super_item.gd" id="1_lqdff"]
+
+[node name="Node2D" type="Node2D" unique_id=2133123015]
+
+[node name="SuperItem" type="Node2D" parent="." unique_id=1225842206]
+script = ExtResource("1_lqdff")
+metadata/_custom_type_script = "uid://bw2ia6los0tes"

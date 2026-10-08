@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://1bc7mmlrsopc"]
+
+[ext_resource type="Script" uid="uid://ciy7p6lpsvbko" path="res://scripts/centaur.gd" id="1_g2sqj"]
+[ext_resource type="Script" uid="uid://dqub6nj7t20oc" path="res://scripts/enemy/enemy_stats.gd" id="2_c8g3v"]
+
+[sub_resource type="Resource" id="Resource_c8g3v"]
+script = ExtResource("2_c8g3v")
+attack = 3
+health = 10
+speed = 250.0
+metadata/_custom_type_script = "uid://dqub6nj7t20oc"
+
+[node name="Centaur" type="CharacterBody2D" unique_id=846916828]
+script = ExtResource("1_g2sqj")
+stats = SubResource("Resource_c8g3v")
